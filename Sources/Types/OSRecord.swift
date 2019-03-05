@@ -23,48 +23,48 @@ import Foundation
 /// // or
 /// record.data.myproperty
 /// ```
-class OSRecord {
+public class OSRecord {
     
     /// record's data
-    var data: [String: Any]
+    public var data: [String: Any]
     /// Record's score. Used for sorting.
-    var score: Double = 0
+    public var score: Double = 0
     
     /// The initializer manages the record's data
     ///
     /// - Parameter data: Takes a dictionnary as input, represent the record's data
-    init(data: [String: Any]) {
+    public init(data: [String: Any]) {
         self.data = data
     }
     
     /// Record's main value
-    var main: String?
+    public var main: String?
     /// Set record's main property
     ///
     /// - Parameter key: The key that will act as main key
-    func main(key: String) {
+    public func main(key: String) {
         if data[key] != nil {
             self.main = key
         }
     }
     
     /// Record's secondary value
-    var secondary: String?
+    public var secondary: String?
     /// Set record's main property
     ///
     /// - Parameter key: The key that will act as secondary key
-    func secondary(key: String) {
+    public func secondary(key: String) {
         if data[key] != nil {
             self.secondary = key
         }
     }
     
     /// Keys of the data object
-    var keys: [String] {
+    public var keys: [String] {
         return Array<String>(self.data.keys)
     }
     /// Values of the data object
-    var values: [Any] {
+    public var values: [Any] {
         return Array<Any>(self.data.values)
     }
 }
