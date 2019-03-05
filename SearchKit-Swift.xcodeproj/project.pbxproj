@@ -17,6 +17,10 @@
 		682BD960222E4A9B00FD471C /* OSRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD95E222E408300FD471C /* OSRecord.swift */; };
 		682BD961222E4A9C00FD471C /* OSRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD95E222E408300FD471C /* OSRecord.swift */; };
 		682BD962222E4A9C00FD471C /* OSRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD95E222E408300FD471C /* OSRecord.swift */; };
+		682BD965222E8C9600FD471C /* Levenshtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD964222E8C9600FD471C /* Levenshtein.swift */; };
+		682BD966222E8F1600FD471C /* Levenshtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD964222E8C9600FD471C /* Levenshtein.swift */; };
+		682BD967222E8F1700FD471C /* Levenshtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD964222E8C9600FD471C /* Levenshtein.swift */; };
+		682BD968222E8F1700FD471C /* Levenshtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD964222E8C9600FD471C /* Levenshtein.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,7 @@
 		682BD956222E3F1A00FD471C /* SearchKit_Swift_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchKit_Swift_iOS.h; sourceTree = "<group>"; };
 		682BD957222E3F1A00FD471C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682BD95E222E408300FD471C /* OSRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSRecord.swift; sourceTree = "<group>"; };
+		682BD964222E8C9600FD471C /* Levenshtein.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levenshtein.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +166,7 @@
 		682BD95C222E3F3200FD471C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				682BD963222E8C7B00FD471C /* Helpers */,
 				682BD95D222E406700FD471C /* Types */,
 			);
 			path = Sources;
@@ -172,6 +178,14 @@
 				682BD95E222E408300FD471C /* OSRecord.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		682BD963222E8C7B00FD471C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				682BD964222E8C9600FD471C /* Levenshtein.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				682BD95F222E408300FD471C /* OSRecord.swift in Sources */,
+				682BD965222E8C9600FD471C /* Levenshtein.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				682BD960222E4A9B00FD471C /* OSRecord.swift in Sources */,
+				682BD966222E8F1600FD471C /* Levenshtein.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				682BD961222E4A9C00FD471C /* OSRecord.swift in Sources */,
+				682BD967222E8F1700FD471C /* Levenshtein.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				682BD962222E4A9C00FD471C /* OSRecord.swift in Sources */,
+				682BD968222E8F1700FD471C /* Levenshtein.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
