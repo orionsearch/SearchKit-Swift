@@ -4,8 +4,7 @@ install:
   # Install Jazzy and dependencies
   - gem install jazzy
 script:
-  - >
-  jazzy \
+  - "jazzy \
   --clean \
   --author Arthur Guiot \
   --author_url https://arguiot.com \
@@ -13,7 +12,7 @@ script:
   --module-version 1.0.0 \
   --xcodebuild-arguments -scheme,SearchKit-Swift \
   --module SearchKit-Swift \
-  --output docs
+  --output docs"
 
 deploy:
   provider:     pages
