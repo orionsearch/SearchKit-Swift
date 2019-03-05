@@ -14,6 +14,9 @@
 		682BD94B222E3EFB00FD471C /* SearchKit_Swift_watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 682BD949222E3EFB00FD471C /* SearchKit_Swift_watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		682BD958222E3F1A00FD471C /* SearchKit_Swift_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 682BD956222E3F1A00FD471C /* SearchKit_Swift_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		682BD95F222E408300FD471C /* OSRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD95E222E408300FD471C /* OSRecord.swift */; };
+		682BD960222E4A9B00FD471C /* OSRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD95E222E408300FD471C /* OSRecord.swift */; };
+		682BD961222E4A9C00FD471C /* OSRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD95E222E408300FD471C /* OSRecord.swift */; };
+		682BD962222E4A9C00FD471C /* OSRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD95E222E408300FD471C /* OSRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -407,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682BD960222E4A9B00FD471C /* OSRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682BD961222E4A9C00FD471C /* OSRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682BD962222E4A9C00FD471C /* OSRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
