@@ -21,6 +21,15 @@
 		682BD966222E8F1600FD471C /* Levenshtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD964222E8C9600FD471C /* Levenshtein.swift */; };
 		682BD967222E8F1700FD471C /* Levenshtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD964222E8C9600FD471C /* Levenshtein.swift */; };
 		682BD968222E8F1700FD471C /* Levenshtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD964222E8C9600FD471C /* Levenshtein.swift */; };
+		682BD96A222E944B00FD471C /* stopwords-iso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD969222E944B00FD471C /* stopwords-iso.swift */; };
+		682BD96B222E95FF00FD471C /* stopwords-iso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD969222E944B00FD471C /* stopwords-iso.swift */; };
+		682BD96C222E95FF00FD471C /* stopwords-iso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD969222E944B00FD471C /* stopwords-iso.swift */; };
+		682BD96D222E960000FD471C /* stopwords-iso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD969222E944B00FD471C /* stopwords-iso.swift */; };
+		682BD96F222E960F00FD471C /* Tokenize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD96E222E960E00FD471C /* Tokenize.swift */; };
+		682BD971222E971000FD471C /* regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD970222E971000FD471C /* regex.swift */; };
+		682BD972222E9A1C00FD471C /* regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD970222E971000FD471C /* regex.swift */; };
+		682BD973222E9A1C00FD471C /* regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD970222E971000FD471C /* regex.swift */; };
+		682BD974222E9A1D00FD471C /* regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD970222E971000FD471C /* regex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,9 @@
 		682BD957222E3F1A00FD471C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682BD95E222E408300FD471C /* OSRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSRecord.swift; sourceTree = "<group>"; };
 		682BD964222E8C9600FD471C /* Levenshtein.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levenshtein.swift; sourceTree = "<group>"; };
+		682BD969222E944B00FD471C /* stopwords-iso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "stopwords-iso.swift"; sourceTree = "<group>"; };
+		682BD96E222E960E00FD471C /* Tokenize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenize.swift; sourceTree = "<group>"; };
+		682BD970222E971000FD471C /* regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +196,9 @@
 			isa = PBXGroup;
 			children = (
 				682BD964222E8C9600FD471C /* Levenshtein.swift */,
+				682BD969222E944B00FD471C /* stopwords-iso.swift */,
+				682BD96E222E960E00FD471C /* Tokenize.swift */,
+				682BD970222E971000FD471C /* regex.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -408,7 +423,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682BD971222E971000FD471C /* regex.swift in Sources */,
 				682BD95F222E408300FD471C /* OSRecord.swift in Sources */,
+				682BD96A222E944B00FD471C /* stopwords-iso.swift in Sources */,
+				682BD96F222E960F00FD471C /* Tokenize.swift in Sources */,
 				682BD965222E8C9600FD471C /* Levenshtein.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +444,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				682BD960222E4A9B00FD471C /* OSRecord.swift in Sources */,
+				682BD972222E9A1C00FD471C /* regex.swift in Sources */,
+				682BD96B222E95FF00FD471C /* stopwords-iso.swift in Sources */,
 				682BD966222E8F1600FD471C /* Levenshtein.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +455,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				682BD961222E4A9C00FD471C /* OSRecord.swift in Sources */,
+				682BD973222E9A1C00FD471C /* regex.swift in Sources */,
+				682BD96C222E95FF00FD471C /* stopwords-iso.swift in Sources */,
 				682BD967222E8F1700FD471C /* Levenshtein.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +466,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				682BD962222E4A9C00FD471C /* OSRecord.swift in Sources */,
+				682BD974222E9A1D00FD471C /* regex.swift in Sources */,
+				682BD96D222E960000FD471C /* stopwords-iso.swift in Sources */,
 				682BD968222E8F1700FD471C /* Levenshtein.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

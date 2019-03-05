@@ -1,10 +1,11 @@
 language:       ruby
+os:             osx
 osx_image:      xcode10.1
 install:
   # Install Jazzy and dependencies
   - gem install jazzy
 script:
-  - "jazzy --clean --no-objc --author Arthur Guiot --author_url https://arguiot.com --github_url https://github.com/orionsearch/SearchKit-Swift --output docs --xcodebuild-arguments -project,SearchKit-Swift.xcodeproj,-scheme,SearchKit-Swift -m SearchKit_Swift --theme fullwidth"
+  - "jazzy --clean --no-objc --author 'Arthur Guiot' --author_url https://arguiot.com --github_url https://github.com/orionsearch/SearchKit-Swift --output docs --xcodebuild-arguments -project,SearchKit-Swift.xcodeproj,-scheme,SearchKit-Swift -m SearchKit_Swift --theme fullwidth"
 
 deploy:
   provider:     pages
