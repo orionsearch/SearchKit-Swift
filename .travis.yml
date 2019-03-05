@@ -4,7 +4,8 @@ install:
   # Install Jazzy and dependencies
   - gem install jazzy
 script:
-  - jazzy \
+  - >
+  jazzy \
   --clean \
   --author Arthur Guiot \
   --author_url https://arguiot.com \
