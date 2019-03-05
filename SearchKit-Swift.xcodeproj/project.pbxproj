@@ -13,6 +13,7 @@
 		682BD93E222E3ED800FD471C /* SearchKit_Swift_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 682BD93C222E3ED800FD471C /* SearchKit_Swift_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		682BD94B222E3EFB00FD471C /* SearchKit_Swift_watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 682BD949222E3EFB00FD471C /* SearchKit_Swift_watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		682BD958222E3F1A00FD471C /* SearchKit_Swift_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 682BD956222E3F1A00FD471C /* SearchKit_Swift_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		682BD95F222E408300FD471C /* OSRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD95E222E408300FD471C /* OSRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		682BD954222E3F1A00FD471C /* SearchKit_Swift_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SearchKit_Swift_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		682BD956222E3F1A00FD471C /* SearchKit_Swift_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchKit_Swift_iOS.h; sourceTree = "<group>"; };
 		682BD957222E3F1A00FD471C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		682BD95E222E408300FD471C /* OSRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSRecord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +158,17 @@
 		682BD95C222E3F3200FD471C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				682BD95D222E406700FD471C /* Types */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		682BD95D222E406700FD471C /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				682BD95E222E408300FD471C /* OSRecord.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 				TargetAttributes = {
 					682BD91A222E3E3F00FD471C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					682BD923222E3E3F00FD471C = {
 						CreatedOnToolsVersion = 10.1;
@@ -379,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682BD95F222E408300FD471C /* OSRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +559,7 @@
 		682BD930222E3E3F00FD471C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -565,6 +579,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ArthurG.OrionSearch.SearchKit-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -572,6 +587,7 @@
 		682BD931222E3E3F00FD471C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -598,6 +614,7 @@
 		682BD933222E3E3F00FD471C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 73CCF549YB;
@@ -616,6 +633,7 @@
 		682BD934222E3E3F00FD471C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 73CCF549YB;
