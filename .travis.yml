@@ -6,7 +6,7 @@ install:
   - gem install jazzy
 script:
   - "jazzy --clean --no-objc --author 'Arthur Guiot' --author_url https://arguiot.com --github_url https://github.com/orionsearch/SearchKit-Swift --output docs --xcodebuild-arguments -project,SearchKit-Swift.xcodeproj,-scheme,SearchKit-Swift -m SearchKit_Swift --theme fullwidth"
-
+  - xcodebuild -project SearchKit-Swift.xcodeproj -scheme SearchKit-Swift test
 deploy:
   provider:     pages
   skip-cleanup: true
