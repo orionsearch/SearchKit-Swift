@@ -4,15 +4,7 @@ install:
   # Install Jazzy and dependencies
   - gem install jazzy
 script:
-  - "jazzy \
-  --clean \
-  --author Arthur Guiot \
-  --author_url https://arguiot.com \
-  --github_url https://github.com/orionsearch/SearchKit-Swift \
-  --module-version 1.0.0 \
-  --xcodebuild-arguments -scheme,SearchKit-Swift \
-  --module SearchKit-Swift \
-  --output docs"
+  - "jazzy --clean --no-objc --author Arthur Guiot --author_url https://arguiot.com --github_url https://github.com/orionsearch/SearchKit-Swift --output docs --xcodebuild-arguments -project,SearchKit-Swift.xcodeproj,-scheme,SearchKit-Swift -m SearchKit_Swift"
 
 deploy:
   provider:     pages
