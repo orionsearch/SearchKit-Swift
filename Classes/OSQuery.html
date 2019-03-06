@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OSQuery Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/OSQuery" class="dashAnchor"></a>
+
+    <a title="OSQuery Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          SearchKit_Swift Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/orionsearch/SearchKit-Swift">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">SearchKit_Swift Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      OSQuery Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/OSQuery.html">OSQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/OSRecord.html">OSRecord</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>OSQuery</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">OSQuery</span></code></pre>
+
+                </div>
+              </div>
+            <p><code>OSQuery</code> is an object that represents a search query. It makes the process of parsing and tokenizing a query without the need for user&rsquo;s interaction. It currently supports 57 languages (ISO 639-1):</p>
+
+<table><tr><td>af</td><td>ar</td><td>hy</td><td>eu</td><td>bn</td><td>br</td><td>bg</td><td>ca</td><td>zh</td><td>hr</td><td>cs</td><td>da</td><td>nl</td><td>en</td><td>eo</td><td>et</td><td>fi</td><td>fr</td><td>gl</td><td>de</td><td>el</td><td>ha</td><td>he</td><td>hi</td><td>hu</td><td>id</td><td>ga</td><td>it</td><td>ja</td><td>ko</td><td>ku</td><td>la</td><td>lt</td><td>lv</td><td>ms</td><td>mr</td><td>no</td><td>fa</td><td>pl</td><td>pt</td><td>ro</td><td>ru</td><td>sk</td><td>sl</td><td>so</td><td>st</td><td>es</td><td>sw</td><td>sv</td><td>th</td><td>tl</td><td>tr</td><td>uk</td><td>ur</td><td>vi</td><td>yo</td><td>zu</td></tr></table>
+
+<p>The query object can also specify which column to search in using the <code>keys</code> array. This will mostly be useful in the Quick searches, but it works on all <code>OrionSearch.OSSearchType</code>.</p>
+<h4 id='construction' class='heading'>Construction</h4>
+<pre class="highlight javascript"><code><span class="kd">let</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">OSQuery</span><span class="p">(</span><span class="nx">str</span><span class="p">:</span> <span class="s2">"Articles about Donald Trump"</span><span class="p">)</span>
+</code></pre>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15SearchKit_Swift7OSQueryC3strSSvp"></a>
+                    <a name="//apple_ref/swift/Property/str" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15SearchKit_Swift7OSQueryC3strSSvp">str</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Original string input</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15SearchKit_Swift7OSQueryC4keysSaySSGSgvp"></a>
+                    <a name="//apple_ref/swift/Property/keys" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15SearchKit_Swift7OSQueryC4keysSaySSGSgvp">keys</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specials column to look into</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15SearchKit_Swift7OSQueryC6parsedSDySSypGvp"></a>
+                    <a name="//apple_ref/swift/Property/parsed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15SearchKit_Swift7OSQueryC6parsedSDySSypGvp">parsed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Parsed values</p>
+
+<ul>
+<li><strong>Return Values</strong>:
+
+<ul>
+<li>filters: <code>[[String]]</code></li>
+<li>keywords: <code>[String : Double]</code></li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">parsed</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15SearchKit_Swift7OSQueryC3str4lang4keysACSS_SSSaySSGSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(str:lang:keys:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15SearchKit_Swift7OSQueryC3str4lang4keysACSS_SSSaySSGSgtcfc">init(str:lang:keys:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>OSQuery&rsquo;s contructor</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">str</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">lang</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"en"</span><span class="p">,</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>str</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The query as it was typed by the user</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lang</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>In which language was the user&rsquo;s query written?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>keys</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Special column to look into. Used for Quick searches</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://arguiot.com" target="_blank" rel="external">Arthur Guiot</a>. All rights reserved. (Last updated: 2019-03-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

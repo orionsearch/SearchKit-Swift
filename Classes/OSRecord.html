@@ -54,6 +54,9 @@
             <a class="nav-group-name-link" href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/OSQuery.html">OSQuery</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/OSRecord.html">OSRecord</a>
               </li>
             </ul>
@@ -74,7 +77,7 @@
             <p><code>OSRecord</code> is an object representing a row in your database. It can be modified to keep certain properties or hide data. It&rsquo;s a pretty light object that helps OrionSearch unifying its ecosystem architecture without using native objects for better integration across all the different platforms.</p>
 
 <p>The <code>OSRecord</code> object will mostly be used as a read-only property given by the <code>perform</code> method in <code>OrionSearch</code>. But it can also be created manually for in-memory databases:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">record</span> <span class="o">=</span> <span class="kt">OSRecord</span><span class="p">([</span> <span class="o">...</span> <span class="p">])</span> <span class="c1">// creates the record</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">record</span> <span class="o">=</span> <span class="kt">OSRecord</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">])</span> <span class="c1">// creates the record</span>
 </code></pre>
 <h2 id='accessing-the-data' class='heading'>Accessing the data</h2>
 
