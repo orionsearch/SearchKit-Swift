@@ -1,33 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/travis/build/orionsearch/SearchKit-Swift/Sources/Types/OSDatabase.swift",
-      "line": 63,
-      "symbol": "OSDatabase.init(cache:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/travis/build/orionsearch/SearchKit-Swift/Sources/Types/OSDatabase.swift",
-      "line": 69,
-      "symbol": "OSDatabase.configure(main:secondary:lang:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/travis/build/orionsearch/SearchKit-Swift/Sources/Types/OSDatabase.swift",
-      "line": 108,
-      "symbol": "OSDatabase.select(contains:key:range:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/travis/build/orionsearch/SearchKit-Swift/Sources/Types/OSDatabase.swift",
-      "line": 137,
-      "symbol": "OSDatabase.keywords(keys:record:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/travis/build/orionsearch/SearchKit-Swift"
 }

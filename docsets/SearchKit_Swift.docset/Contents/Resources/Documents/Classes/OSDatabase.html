@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           SearchKit_Swift Docs
         </a>
-         (82% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -171,7 +171,7 @@ Every database should have a column named <code>keywords</code> that will be use
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>OSDatabase&rsquo;s initializer</p>
 
                       </div>
                       <div class="declaration">
@@ -181,6 +181,25 @@ Every database should have a column named <code>keywords</code> that will be use
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">cache</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="o">=</span> <span class="kt">Set</span><span class="p">())</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cache</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The keyword cache. Used to restore the cache.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -198,7 +217,12 @@ Every database should have a column named <code>keywords</code> that will be use
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Method to configure the keyword cache and <code>keyword</code> column of your database. It acts as a setup function.</p>
+
+<blockquote>
+<p><strong>⚠️ Must be ran before trying to search anything.</strong>
+Can be ran once.</p>
+</blockquote>
 
                       </div>
                       <div class="declaration">
@@ -208,6 +232,61 @@ Every database should have a column named <code>keywords</code> that will be use
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">configure</span><span class="p">(</span><span class="nv">main</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">secondary</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">lang</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"en"</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>main</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The main colum of your database</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>secondary</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The secondary colum of your database</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lang</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The language used for tokenizing the fields</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Simple progress indicator callback. The first <code>Int</code> will be the actual row and the second <code>Int</code> is the total.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -225,7 +304,7 @@ Every database should have a column named <code>keywords</code> that will be use
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This function acts as a binding between OrionSearch select function and your database one.</p>
 
                       </div>
                       <div class="declaration">
@@ -235,6 +314,53 @@ Every database should have a column named <code>keywords</code> that will be use
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">select</span><span class="p">(</span><span class="nv">contains</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"keywords"</span><span class="p">,</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">Range</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/OSRecord.html">OSRecord</a></span><span class="p">]</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>contains</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The pattern we&rsquo;re looking to select.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Which column is used</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>range</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The range of rows we&rsquo;re looking for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>It returns an array of <code><a href="../Classes/OSRecord.html">OSRecord</a></code></p>
                       </div>
                     </section>
                   </div>
@@ -252,7 +378,7 @@ Every database should have a column named <code>keywords</code> that will be use
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This function is used to insert the keywords into the <code>keywords</code> column</p>
 
                       </div>
                       <div class="declaration">
@@ -262,6 +388,37 @@ Every database should have a column named <code>keywords</code> that will be use
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">keywords</span><span class="p">(</span><span class="nv">keys</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">record</span><span class="p">:</span> <span class="kt"><a href="../Classes/OSRecord.html">OSRecord</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>keys</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Set of keywords we&rsquo;re looking to insert</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>record</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current record / row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
