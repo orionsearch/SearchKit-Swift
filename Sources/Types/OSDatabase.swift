@@ -143,10 +143,14 @@ public class OSDatabase {
     }
     private func keyword(keys: Set<String>, record: OSRecord) {
         let i = data.firstIndex { $0 == record }
-        var keywords = data[i!].data["keywords"] as! Set<String>
-        keywords.removeAll()
+        var keywords = data[i!].data["keywords"] as? Set<String>
+        if keywords == nil {
+            data[i!].data.updateValue(Set<String>(), forKey: "keywords")
+            keywords = data[i!].data["keywords"] as! Set<String>
+        }
+        keywords!.removeAll()
         keys.forEach { (str) in
-            keywords.insert(str)
+            keywords!.insert(str)
         }
     }
 }

@@ -37,4 +37,27 @@ class SearchKit_SwiftTests: XCTestCase {
             "world": 0.5
         ])
     }
+    func testOSDatabase() {
+        let db = OSDatabase()
+        db.data = [
+            OSRecord(data: [
+                "title": "Hello World",
+                "author": "Me"
+            ]),
+            OSRecord(data: [
+                "title": "How are you",
+                "author": "you"
+            ]),
+            OSRecord(data: [
+                "title": "Random titles",
+                "author": "someone"
+            ]),
+            OSRecord(data: [
+                "title": "Just for test",
+                "author": "someone else"
+            ])
+        ]
+        db.configure(main: "title")
+        XCTAssert(db.keywordsCache.contains("random"))
+    }
 }
