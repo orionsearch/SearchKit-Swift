@@ -1,6 +1,12 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/travis/build/orionsearch/SearchKit-Swift/Sources/Types/OSDatabase.swift",
+      "line": 63,
+      "symbol": "OSDatabase.init(cache:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/travis/build/orionsearch/SearchKit-Swift"
 }
