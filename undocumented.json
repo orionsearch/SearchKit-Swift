@@ -16,8 +16,15 @@
     },
     {
       "file": "/Users/travis/build/orionsearch/SearchKit-Swift/Sources/Types/OSDatabase.swift",
-      "line": 76,
+      "line": 108,
       "symbol": "OSDatabase.select(contains:key:range:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/orionsearch/SearchKit-Swift/Sources/Types/OSDatabase.swift",
+      "line": 137,
+      "symbol": "OSDatabase.keywords(keys:record:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
