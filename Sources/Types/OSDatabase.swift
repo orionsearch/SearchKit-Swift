@@ -178,4 +178,40 @@ public class OSDatabase {
             keywords!.insert(str)
         }
     }
+    var aFunction: (([OSRecord]) -> Void)?
+    /// Add records to your database while parsing them
+    ///
+    /// - Parameters:
+    ///   - records: A list of `OSRecord`
+    ///   - main: The main colum of your database
+    ///   - secondary: The secondary colum of your database
+    ///   - lang: The language used for tokenizing the fields
+    public func add(records: [OSRecord], main: String, secondary: String? = nil, lang: String = "en") {
+        if let a = aFunction {
+            a(records)
+        } else {
+            add(records: records)
+        }
+        records.forEach { (record) in
+            var keys = Set<String>()
+            let mainEntry = record.data[main] as! String
+            mainEntry.tokenize().forEach({ (t) in
+                self.keywordsCache.insert(t)
+                keys.insert(t)
+            })
+            if let secondary = secondary {
+                let secondaryEntry = record.data[secondary] as! String
+                secondaryEntry.tokenize().forEach({ (t) in
+                    self.keywordsCache.insert(t)
+                    keys.insert(t)
+                })
+            }
+            keywords(keys: keys, record: record)
+        }
+    }
+    private func add(records: [OSRecord]) {
+        records.forEach { (record) in
+            data.append(record)
+        }
+    }
 }

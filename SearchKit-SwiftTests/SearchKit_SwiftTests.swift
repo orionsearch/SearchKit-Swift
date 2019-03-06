@@ -59,5 +59,14 @@ class SearchKit_SwiftTests: XCTestCase {
         ]
         db.configure(main: "title")
         XCTAssert(db.keywordsCache.contains("random"))
+        
+        db.add(records: [
+            OSRecord(data: [
+                "title": "OrionSearch is awesome",
+                "author": "github"
+            ])
+        ], main: "title")
+        
+        XCTAssert(db.keywordsCache.contains("orionsearch"))
     }
 }
