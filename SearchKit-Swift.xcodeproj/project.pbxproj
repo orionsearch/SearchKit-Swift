@@ -38,6 +38,9 @@
 		682BD97B222F75A400FD471C /* Tokenize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD96E222E960E00FD471C /* Tokenize.swift */; };
 		682BD97C222F75A500FD471C /* Tokenize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD96E222E960E00FD471C /* Tokenize.swift */; };
 		682BD97E222F88EB00FD471C /* OSDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD97D222F88EB00FD471C /* OSDatabase.swift */; };
+		682BD97F222F8EE400FD471C /* OSDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD97D222F88EB00FD471C /* OSDatabase.swift */; };
+		682BD980222F8EE400FD471C /* OSDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD97D222F88EB00FD471C /* OSDatabase.swift */; };
+		682BD981222F8EE500FD471C /* OSDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD97D222F88EB00FD471C /* OSDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -457,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682BD97F222F8EE400FD471C /* OSDatabase.swift in Sources */,
 				682BD960222E4A9B00FD471C /* OSRecord.swift in Sources */,
 				682BD972222E9A1C00FD471C /* regex.swift in Sources */,
 				682BD96B222E95FF00FD471C /* stopwords-iso.swift in Sources */,
@@ -470,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682BD980222F8EE400FD471C /* OSDatabase.swift in Sources */,
 				682BD961222E4A9C00FD471C /* OSRecord.swift in Sources */,
 				682BD973222E9A1C00FD471C /* regex.swift in Sources */,
 				682BD96C222E95FF00FD471C /* stopwords-iso.swift in Sources */,
@@ -483,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682BD981222F8EE500FD471C /* OSDatabase.swift in Sources */,
 				682BD962222E4A9C00FD471C /* OSRecord.swift in Sources */,
 				682BD974222E9A1D00FD471C /* regex.swift in Sources */,
 				682BD96D222E960000FD471C /* stopwords-iso.swift in Sources */,

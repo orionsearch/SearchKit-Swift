@@ -58,10 +58,47 @@ import Foundation
 public class OSDatabase {
     /// The keyword cache. Used to transfer database cache.
     public var keywordsCache: Set<String>
-    var data: [Dictionary<String, Any>] = []
+    var data: [OSRecord] = []
     
     public init(cache: Set<String> = Set()) {
         keywordsCache = cache
     }
     
+    var main: String = ""
+    var secondary: String?
+    public func configure(main: String, secondary: String? = nil, lang: String = "en", completion: (() -> Void)? = nil) {
+        self.main = main
+        self.secondary = secondary
+        
+    }
+    
+    var sFunction: ((String, String?) -> [OSRecord])?
+    public func select(contains: String? = nil, key: String = "keywords", range: Range<Int>? = nil) -> [OSRecord] {
+        if let s = sFunction {
+            return s(key, contains)
+        } else {
+            return select(key: key, contains: contains)
+        }
+    }
+    private func select(key: String, contains: String?) -> [OSRecord] {
+        guard let contains = contains else {
+            return data
+        }
+        var out = [OSRecord]()
+        data.forEach { (record) in
+            if key == "keywords" {
+                let entry = record.data[key] as! Set<String>
+                if entry.contains(contains) {
+                    out.append(record)
+                }
+            } else {
+                let entry = record.data[key] as! String
+                let t = entry.lowercased().split(separator: " ").map { String($0) }
+                if t.contains(contains) {
+                    out.append(record)
+                }
+            }
+        }
+        return out
+    }
 }
