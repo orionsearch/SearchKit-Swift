@@ -41,11 +41,11 @@ public class OSQuery {
         self.str = str
         self.keys = keys
         
-        let parsedFilters = removeAndParseFilters(text: str)
+        var parsedFilters = removeAndParseFilters(text: str)
         let stri = parsedFilters.last!
-        let keywords = extractKeywords(text: str, lang: lang)
+        let keywords = extractKeywords(text: stri[0], lang: lang)
         let scores = scoreKeywords(keys: keywords)
-        
+        parsedFilters.removeLast()
         parsed = [
             "filters": parsedFilters,
             "keywords": scores
@@ -62,7 +62,7 @@ public class OSQuery {
         matches?.forEach({ (result) in
             let a = result.range.lowerBound
             let b = result.range.upperBound
-            let str = text[a...b]
+            let str = text[a..<b]
             
             let split = str.split(separator: ":")
             let name = String(split[0])
@@ -88,7 +88,7 @@ public class OSQuery {
                 a == x
             }).count]
         }
-        let dic: [String: Double] = Dictionary(uniqueKeysWithValues: count.map { ($0[0] as! String, $0[1] as! Double )})
+        let dic: [String: Double] = Dictionary(uniqueKeysWithValues: count.map { ($0[0] as! String, Double($0[1] as! Int) )})
         
         uniq.forEach { (key) in
             let n = dic[key]
