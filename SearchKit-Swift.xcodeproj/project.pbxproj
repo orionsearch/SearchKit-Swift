@@ -37,6 +37,7 @@
 		682BD97A222F75A300FD471C /* Tokenize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD96E222E960E00FD471C /* Tokenize.swift */; };
 		682BD97B222F75A400FD471C /* Tokenize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD96E222E960E00FD471C /* Tokenize.swift */; };
 		682BD97C222F75A500FD471C /* Tokenize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD96E222E960E00FD471C /* Tokenize.swift */; };
+		682BD97E222F88EB00FD471C /* OSDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD97D222F88EB00FD471C /* OSDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		682BD96E222E960E00FD471C /* Tokenize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenize.swift; sourceTree = "<group>"; };
 		682BD970222E971000FD471C /* regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regex.swift; sourceTree = "<group>"; };
 		682BD975222F68B200FD471C /* OSQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSQuery.swift; sourceTree = "<group>"; };
+		682BD97D222F88EB00FD471C /* OSDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			children = (
 				682BD95E222E408300FD471C /* OSRecord.swift */,
 				682BD975222F68B200FD471C /* OSQuery.swift */,
+				682BD97D222F88EB00FD471C /* OSDatabase.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682BD97E222F88EB00FD471C /* OSDatabase.swift in Sources */,
 				682BD971222E971000FD471C /* regex.swift in Sources */,
 				682BD95F222E408300FD471C /* OSRecord.swift in Sources */,
 				682BD976222F68B200FD471C /* OSQuery.swift in Sources */,

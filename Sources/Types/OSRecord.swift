@@ -20,8 +20,6 @@ import Foundation
 /// `OSRecord` has a simple `data` property to access the data originally given.
 /// ```swift
 /// record.data["myproperty"]
-/// // or
-/// record.data.myproperty
 /// ```
 public class OSRecord {
     
