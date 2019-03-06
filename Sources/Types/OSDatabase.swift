@@ -66,10 +66,42 @@ public class OSDatabase {
     
     var main: String = ""
     var secondary: String?
-    public func configure(main: String, secondary: String? = nil, lang: String = "en", completion: (() -> Void)? = nil) {
+    public func configure(main: String, secondary: String? = nil, lang: String = "en", completion: ((Int, Int) -> Void)? = nil) {
         self.main = main
         self.secondary = secondary
         
+        let length = select().count
+        var array = [Range<Int>]()
+        var i = 0;
+        while i < length {
+            i += 1000;
+            
+            let max = i + 1000 > length ? length : i + 1000
+            let range = Range<Int>(uncheckedBounds: (lower: i, upper: max))
+            array.append(range)
+        }
+        for (index, range) in array.enumerated() {
+            let select = self.select(contains: nil, key: "keywords", range: range)
+            select.forEach { (record) in
+                var keys = Set<String>()
+                let mainEntry = record.data[main] as! String
+                mainEntry.tokenize().forEach({ (t) in
+                    self.keywordsCache.insert(t)
+                    keys.insert(t)
+                })
+                if let secondary = secondary {
+                    let secondaryEntry = record.data[secondary] as! String
+                    secondaryEntry.tokenize().forEach({ (t) in
+                        self.keywordsCache.insert(t)
+                        keys.insert(t)
+                    })
+                }
+                keywords(keys: keys, record: record)
+            }
+            if let c = completion {
+                c(array[index].lowerBound, length)
+            }
+        }
     }
     
     var sFunction: ((String, String?) -> [OSRecord])?
@@ -100,5 +132,21 @@ public class OSDatabase {
             }
         }
         return out
+    }
+    var kFunction: ((Set<String>, OSRecord) -> Void)?
+    public func keywords(keys: Set<String>, record: OSRecord) {
+        if let k = kFunction {
+            return k(keys, record)
+        } else {
+            return keyword(keys: keys, record: record)
+        }
+    }
+    private func keyword(keys: Set<String>, record: OSRecord) {
+        let i = data.firstIndex { $0 == record }
+        var keywords = data[i!].data["keywords"] as! Set<String>
+        keywords.removeAll()
+        keys.forEach { (str) in
+            keywords.insert(str)
+        }
     }
 }

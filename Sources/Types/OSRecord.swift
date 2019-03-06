@@ -21,7 +21,20 @@ import Foundation
 /// ```swift
 /// record.data["myproperty"]
 /// ```
-public class OSRecord {
+public class OSRecord: Equatable {
+    
+    /// "==" Operator for `OSRecord`
+    ///
+    /// - Parameters:
+    ///   - lhs: Left record
+    ///   - rhs: Right record
+    /// - Returns: Bool
+    public static func == (lhs: OSRecord, rhs: OSRecord) -> Bool {
+        let l = lhs.values as? [String]
+        let r = rhs.values as? [String]
+        return l == r
+    }
+    
     
     /// record's data
     public var data: [String: Any]
