@@ -12,7 +12,7 @@ import Foundation
 ///
 /// The `OSRecord` object will mostly be used as a read-only property given by the `perform` method in `OrionSearch`. But it can also be created manually for in-memory databases:
 /// ```swift
-/// let record = OSRecord([ ... ]) // creates the record
+/// let record = OSRecord(data: [ ... ]) // creates the record
 /// ```
 ///
 /// ## Accessing the data
