@@ -60,12 +60,25 @@ public class OSDatabase {
     public var keywordsCache: Set<String>
     var data: [OSRecord] = []
     
+    /// OSDatabase's initializer
+    ///
+    /// - Parameter cache: The keyword cache. Used to restore the cache.
     public init(cache: Set<String> = Set()) {
         keywordsCache = cache
     }
     
     var main: String = ""
     var secondary: String?
+    /// Method to configure the keyword cache and `keyword` column of your database. It acts as a setup function.
+    ///
+    /// > **⚠️ Must be ran before trying to search anything.**
+    /// > Can be ran once.
+    ///
+    /// - Parameters:
+    ///   - main: The main colum of your database
+    ///   - secondary: The secondary colum of your database
+    ///   - lang: The language used for tokenizing the fields
+    ///   - completion: Simple progress indicator callback. The first `Int` will be the actual row and the second `Int` is the total.
     public func configure(main: String, secondary: String? = nil, lang: String = "en", completion: ((Int, Int) -> Void)? = nil) {
         self.main = main
         self.secondary = secondary
@@ -105,6 +118,13 @@ public class OSDatabase {
     }
     
     var sFunction: ((String, String?) -> [OSRecord])?
+    /// This function acts as a binding between OrionSearch select function and your database one.
+    ///
+    /// - Parameters:
+    ///   - contains: The pattern we're looking to select.
+    ///   - key: Which column is used
+    ///   - range: The range of rows we're looking for.
+    /// - Returns: It returns an array of `OSRecord`
     public func select(contains: String? = nil, key: String = "keywords", range: Range<Int>? = nil) -> [OSRecord] {
         if let s = sFunction {
             return s(key, contains)
@@ -134,6 +154,11 @@ public class OSDatabase {
         return out
     }
     var kFunction: ((Set<String>, OSRecord) -> Void)?
+    /// This function is used to insert the keywords into the `keywords` column
+    ///
+    /// - Parameters:
+    ///   - keys: A Set of keywords we're looking to insert
+    ///   - record: The current record / row.
     public func keywords(keys: Set<String>, record: OSRecord) {
         if let k = kFunction {
             return k(keys, record)
