@@ -55,5 +55,31 @@ class OrionSearch {
         self.filters.append(contentsOf: filters)
     }
     
+    /// `perform` will be the function you want to call to basically search something in your database.
+    ///
+    /// The `perform` function is synchronous and blocking. While you can see here a weakness, it's actually a strength as **you** have the hand on optimisation and thread management.
+    ///
+    /// > **⚠️ We strongly recommend to dispatch the function**
+    /// > You can do that by doing something like:
+    /// ```swift
+    /// DispatchQueue.global().sync {
+    ///     os.perform(query: query, type: .normal) { ... }
+    /// }
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - query: Your query as an `OSQuery`. Please see `OSQuery` for more information.
+    ///   - type: The type of your search. It can be: `.quick`: for `OSQuick` searches, `.normal`: for `OSNormal` searches and `.advanced`: for `OSAdvanced` searches powered by machine learning
+    ///   - completion: A callback that will be called each time a record is found. All records will be sorted.
+    ///
+    public func perform(query: OSQuery, type: OSSearchType = .normal, completion: (OSRecord) -> Void) {
+        
+    }
     
+    /// Register end plugin
+    ///
+    /// - Parameter plugin: The desired plugin
+    public func register(plugin: ([OSRecord]) -> [OSRecord]) {
+        
+    }
 }

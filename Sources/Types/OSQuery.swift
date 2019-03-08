@@ -37,7 +37,7 @@ public class OSQuery {
     ///   - str: The query as it was typed by the user
     ///   - lang: In which language was the user's query written?
     ///   - keys: Special column to look into. Used for Quick searches
-    public init(str: String, lang: String = "en", keys: [String]? = nil) {
+    public init(_ str: String, lang: String = "en", keys: [String]? = nil) {
         self.str = str
         self.keys = keys
         
