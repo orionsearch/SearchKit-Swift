@@ -41,6 +41,7 @@
 		682BD97F222F8EE400FD471C /* OSDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD97D222F88EB00FD471C /* OSDatabase.swift */; };
 		682BD980222F8EE400FD471C /* OSDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD97D222F88EB00FD471C /* OSDatabase.swift */; };
 		682BD981222F8EE500FD471C /* OSDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682BD97D222F88EB00FD471C /* OSDatabase.swift */; };
+		6868229922328F35007E1782 /* OrionSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6868229822328F35007E1782 /* OrionSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		682BD970222E971000FD471C /* regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regex.swift; sourceTree = "<group>"; };
 		682BD975222F68B200FD471C /* OSQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSQuery.swift; sourceTree = "<group>"; };
 		682BD97D222F88EB00FD471C /* OSDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSDatabase.swift; sourceTree = "<group>"; };
+		6868229822328F35007E1782 /* OrionSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrionSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		682BD95C222E3F3200FD471C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				6868229722328F12007E1782 /* Main */,
 				682BD963222E8C7B00FD471C /* Helpers */,
 				682BD95D222E406700FD471C /* Types */,
 			);
@@ -216,6 +219,14 @@
 				682BD970222E971000FD471C /* regex.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6868229722328F12007E1782 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6868229822328F35007E1782 /* OrionSearch.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				682BD97E222F88EB00FD471C /* OSDatabase.swift in Sources */,
+				6868229922328F35007E1782 /* OrionSearch.swift in Sources */,
 				682BD971222E971000FD471C /* regex.swift in Sources */,
 				682BD95F222E408300FD471C /* OSRecord.swift in Sources */,
 				682BD976222F68B200FD471C /* OSQuery.swift in Sources */,
