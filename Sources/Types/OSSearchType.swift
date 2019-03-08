@@ -15,7 +15,10 @@ import Foundation
 /// - `.normal`: for `OSNormal` searches,
 /// - `.advanced`: for `OSAdvanced` searches powered by machine learning
 public enum OSSearchType {
+    /// for `OSQuick` searches
     case quick
+    /// for `OSNormal` searches
     case normal
+    /// for `OSAdvanced` searches powered by machine learning
     case advanced
 }

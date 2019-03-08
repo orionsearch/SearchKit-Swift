@@ -30,7 +30,7 @@ class SearchKit_SwiftTests: XCTestCase {
         XCTAssert(record.main == "title")
     }
     func testOSQuery() {
-        let query = OSQuery(str: "Hello World author:someone")
+        let query = OSQuery("Hello World author:someone")
         XCTAssert(query.parsed["filters"] as! [[String]] == [["author", "someone"]])
         XCTAssert(query.parsed["keywords"] as! [String : Double] == [
             "hello": 0.5,
