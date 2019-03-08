@@ -34,7 +34,7 @@ import Foundation
 ///    // Will call this function for every records
 /// }
 /// ```
-class OrionSearch {
+public class OrionSearch {
     var db: OSDatabase
     var filters: [String]
     
