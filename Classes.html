@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
           SearchKit_Swift Docs
         </a>
-         (100% documented)
+         (90% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -62,6 +62,17 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/OSRecord.html">OSRecord</a>
               </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/OrionSearch.html">OrionSearch</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/OSSearchType.html">OSSearchType</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -78,6 +89,63 @@
 
         <section class="section">
           <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15SearchKit_Swift05OrionA0C"></a>
+                    <a name="//apple_ref/swift/Class/OrionSearch" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15SearchKit_Swift05OrionA0C">OrionSearch</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>OrionSearch</code> is the main object of this framework. It will coordinate and operates all the operations and queries inside your database. This is how you construct it:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">db</span> <span class="o">=</span> <span class="kt">OSDatabase</span><span class="p">()</span>
+<span class="cm">/* ... */</span>
+<span class="k">let</span> <span class="nv">os</span> <span class="o">=</span> <span class="kt">OrionSearch</span><span class="p">(</span><span class="nv">db</span><span class="p">:</span> <span class="n">db</span><span class="p">,</span> <span class="nv">filters</span><span class="p">:</span> <span class="p">[</span><span class="s">"author"</span><span class="p">,</span> <span class="s">"type"</span><span class="p">])</span>
+</code></pre>
+
+<blockquote>
+<p><strong>Filters</strong></p>
+
+<p>Filters are a way of filtering the data. It&rsquo;s very similar to GitHub&rsquo;s search filters like <code>is:issue</code> or <code>language:javascript</code> that acts as conditions.</p>
+</blockquote>
+<h2 id='performing-queries' class='heading'>Performing queries</h2>
+
+<p>Queries are an important part of the research experience. That&rsquo;s why querying the database is extremely simple:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">db</span> <span class="o">=</span> <span class="kt">OSDatabase</span><span class="p">()</span>
+<span class="cm">/* ... */</span>
+<span class="k">let</span> <span class="nv">os</span> <span class="o">=</span> <span class="kt">OrionSearch</span><span class="p">(</span><span class="nv">db</span><span class="p">:</span> <span class="n">db</span><span class="p">,</span> <span class="nv">filters</span><span class="p">:</span> <span class="p">[</span><span class="s">"author"</span><span class="p">,</span> <span class="s">"type"</span><span class="p">])</span>
+
+<span class="k">let</span> <span class="nv">query</span> <span class="o">=</span> <span class="kt">OSQuery</span><span class="p">(</span><span class="s">"Rose are red type:poem"</span><span class="p">)</span> <span class="c1">// "Rose are red" + filter looks for a poem</span>
+
+<span class="k">let</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">OSSearchType</span> <span class="o">=</span> <span class="o">.</span><span class="n">normal</span> <span class="c1">// Will perform normal search</span>
+
+<span class="n">os</span><span class="o">.</span><span class="nf">perform</span><span class="p">(</span><span class="nv">query</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="n">type</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="k">in</span>
+   <span class="c1">// Will call this function for every records</span>
+<span class="p">}</span>
+</code></pre>
+
+                        <a href="Classes/OrionSearch.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">OrionSearch</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
             <div class="task-group">
               <ul class="item-container">
                 <li class="item">
@@ -211,7 +279,7 @@ Every database should have a column named <code>keywords</code> that will be use
                       <div class="abstract">
                         <p><code>OSRecord</code> is an object representing a row in your database. It can be modified to keep certain properties or hide data. It&rsquo;s a pretty light object that helps OrionSearch unifying its ecosystem architecture without using native objects for better integration across all the different platforms.</p>
 
-<p>The <code>OSRecord</code> object will mostly be used as a read-only property given by the <code>perform</code> method in <code>OrionSearch</code>. But it can also be created manually for in-memory databases:</p>
+<p>The <code>OSRecord</code> object will mostly be used as a read-only property given by the <code>perform</code> method in <code><a href="Classes/OrionSearch.html">OrionSearch</a></code>. But it can also be created manually for in-memory databases:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">record</span> <span class="o">=</span> <span class="kt">OSRecord</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">])</span> <span class="c1">// creates the record</span>
 </code></pre>
 <h2 id='accessing-the-data' class='heading'>Accessing the data</h2>

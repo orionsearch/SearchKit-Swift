@@ -1,6 +1,26 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/travis/build/orionsearch/SearchKit-Swift/Sources/Types/OSSearchType.swift",
+      "line": 18,
+      "symbol": "OSSearchType.quick",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/orionsearch/SearchKit-Swift/Sources/Types/OSSearchType.swift",
+      "line": 19,
+      "symbol": "OSSearchType.normal",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/orionsearch/SearchKit-Swift/Sources/Types/OSSearchType.swift",
+      "line": 20,
+      "symbol": "OSSearchType.advanced",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/travis/build/orionsearch/SearchKit-Swift"
 }
