@@ -76,10 +76,11 @@ public class OrionSearch {
         
     }
     
+    var plugins = [([OSRecord]) -> [OSRecord]]() // empty plugin list
     /// Register end plugin
     ///
     /// - Parameter plugin: The desired plugin
-    public func register(plugin: ([OSRecord]) -> [OSRecord]) {
-        
+    public func register(plugin: @escaping ([OSRecord]) -> [OSRecord]) {
+        plugins.append(plugin)
     }
 }
