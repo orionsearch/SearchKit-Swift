@@ -50,6 +50,9 @@
 		686822A0223292F2007E1782 /* OSSearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6868229A2232926B007E1782 /* OSSearchType.swift */; };
 		686822A1223292F3007E1782 /* OSSearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6868229A2232926B007E1782 /* OSSearchType.swift */; };
 		68EEE92F22352DB8003F8F42 /* OSQuick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EEE92E22352DB8003F8F42 /* OSQuick.swift */; };
+		68EEE93022352F46003F8F42 /* OSQuick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EEE92E22352DB8003F8F42 /* OSQuick.swift */; };
+		68EEE93122352F46003F8F42 /* OSQuick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EEE92E22352DB8003F8F42 /* OSQuick.swift */; };
+		68EEE93222352F47003F8F42 /* OSQuick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EEE92E22352DB8003F8F42 /* OSQuick.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -497,6 +500,7 @@
 				682BD97F222F8EE400FD471C /* OSDatabase.swift in Sources */,
 				6868229C223292EE007E1782 /* OrionSearch.swift in Sources */,
 				682BD960222E4A9B00FD471C /* OSRecord.swift in Sources */,
+				68EEE93022352F46003F8F42 /* OSQuick.swift in Sources */,
 				682BD972222E9A1C00FD471C /* regex.swift in Sources */,
 				682BD96B222E95FF00FD471C /* stopwords-iso.swift in Sources */,
 				682BD977222F759C00FD471C /* OSQuery.swift in Sources */,
@@ -513,6 +517,7 @@
 				682BD980222F8EE400FD471C /* OSDatabase.swift in Sources */,
 				6868229D223292EE007E1782 /* OrionSearch.swift in Sources */,
 				682BD961222E4A9C00FD471C /* OSRecord.swift in Sources */,
+				68EEE93122352F46003F8F42 /* OSQuick.swift in Sources */,
 				682BD973222E9A1C00FD471C /* regex.swift in Sources */,
 				682BD96C222E95FF00FD471C /* stopwords-iso.swift in Sources */,
 				682BD978222F759C00FD471C /* OSQuery.swift in Sources */,
@@ -529,6 +534,7 @@
 				682BD981222F8EE500FD471C /* OSDatabase.swift in Sources */,
 				6868229E223292EF007E1782 /* OrionSearch.swift in Sources */,
 				682BD962222E4A9C00FD471C /* OSRecord.swift in Sources */,
+				68EEE93222352F47003F8F42 /* OSQuick.swift in Sources */,
 				682BD974222E9A1D00FD471C /* regex.swift in Sources */,
 				682BD96D222E960000FD471C /* stopwords-iso.swift in Sources */,
 				682BD979222F759D00FD471C /* OSQuery.swift in Sources */,
