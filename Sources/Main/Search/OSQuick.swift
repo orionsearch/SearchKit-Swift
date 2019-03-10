@@ -20,4 +20,17 @@ class OSQuick {
         self.options = options
         self.completion = callback
     }
+    
+    func getKeys() -> [String] {
+        var set = Set<String>()
+        let queryKeys = query.keys
+        if let queryKeys = queryKeys {
+            queryKeys.forEach({ (key) in
+                set.insert(key)
+            })
+        } else {
+            set.insert("keywords")
+        }
+        return Array(set)
+    }
 }
