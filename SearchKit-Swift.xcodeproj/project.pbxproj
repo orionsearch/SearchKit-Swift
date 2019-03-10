@@ -49,6 +49,7 @@
 		6868229F223292F2007E1782 /* OSSearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6868229A2232926B007E1782 /* OSSearchType.swift */; };
 		686822A0223292F2007E1782 /* OSSearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6868229A2232926B007E1782 /* OSSearchType.swift */; };
 		686822A1223292F3007E1782 /* OSSearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6868229A2232926B007E1782 /* OSSearchType.swift */; };
+		68EEE92F22352DB8003F8F42 /* OSQuick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EEE92E22352DB8003F8F42 /* OSQuick.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		682BD97D222F88EB00FD471C /* OSDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSDatabase.swift; sourceTree = "<group>"; };
 		6868229822328F35007E1782 /* OrionSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrionSearch.swift; sourceTree = "<group>"; };
 		6868229A2232926B007E1782 /* OSSearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSSearchType.swift; sourceTree = "<group>"; };
+		68EEE92E22352DB8003F8F42 /* OSQuick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSQuick.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,9 +235,18 @@
 		6868229722328F12007E1782 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				68EEE92D22352DA5003F8F42 /* Search */,
 				6868229822328F35007E1782 /* OrionSearch.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		68EEE92D22352DA5003F8F42 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				68EEE92E22352DB8003F8F42 /* OSQuick.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,6 +472,7 @@
 				682BD97E222F88EB00FD471C /* OSDatabase.swift in Sources */,
 				6868229922328F35007E1782 /* OrionSearch.swift in Sources */,
 				682BD971222E971000FD471C /* regex.swift in Sources */,
+				68EEE92F22352DB8003F8F42 /* OSQuick.swift in Sources */,
 				682BD95F222E408300FD471C /* OSRecord.swift in Sources */,
 				682BD976222F68B200FD471C /* OSQuery.swift in Sources */,
 				682BD96A222E944B00FD471C /* stopwords-iso.swift in Sources */,

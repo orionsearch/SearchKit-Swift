@@ -72,8 +72,18 @@ public class OrionSearch {
     ///   - type: The type of your search. It can be: `.quick`: for `OSQuick` searches, `.normal`: for `OSNormal` searches and `.advanced`: for `OSAdvanced` searches powered by machine learning
     ///   - completion: A callback that will be called each time a record is found. All records will be sorted.
     ///
-    public func perform(query: OSQuery, type: OSSearchType = .normal, completion: (OSRecord) -> Void) {
-        
+    public func perform(query: OSQuery, type: OSSearchType = .normal, completion: @escaping (OSRecord) -> Void) {
+        let options: [String: Any] = [
+            "filters": Set<String>(filters)
+        ]
+        switch type {
+        case .quick:
+            OSQuick(query: query, db: self.db, options: options, callback: completion)
+        case .normal:
+            break
+        case .advanced:
+            break
+        }
     }
     
     var plugins = [([OSRecord]) -> [OSRecord]]() // empty plugin list
