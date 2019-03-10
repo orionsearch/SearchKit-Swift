@@ -19,6 +19,8 @@ class OSQuick {
         self.db = db
         self.options = options
         self.completion = callback
+        
+        search()
     }
     
     func getKeys() -> [String] {
@@ -32,5 +34,20 @@ class OSQuick {
             set.insert("keywords")
         }
         return Array(set)
+    }
+    
+    func search() {
+        let keys = getKeys()
+        let keywordScore = query.parsed["keywords"] as! [String : Double]
+        let keywords = Array(keywordScore.keys)
+        
+        keys.forEach { (key) in
+            keywords.forEach({ (keyword) in
+                let select = self.db.select(contains: keyword, key: key)
+                select.forEach({ (record) in
+                    self.completion(record)
+                })
+            })
+        }
     }
 }
