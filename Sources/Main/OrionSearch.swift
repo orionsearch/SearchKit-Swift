@@ -80,7 +80,7 @@ public class OrionSearch {
         case .quick:
             OSQuick(query: query, db: self.db, options: options, callback: completion)
         case .normal:
-            break
+            OSNormal(query: query, db: self.db, options: options, callback: completion)
         case .advanced:
             break
         }

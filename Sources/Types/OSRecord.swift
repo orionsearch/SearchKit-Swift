@@ -21,7 +21,7 @@ import Foundation
 /// ```swift
 /// record.data["myproperty"]
 /// ```
-public class OSRecord: Equatable {
+public class OSRecord: Equatable, Hashable {
     
     /// "==" Operator for `OSRecord`
     ///
@@ -34,7 +34,9 @@ public class OSRecord: Equatable {
         let r = rhs.values as? [String]
         return l == r
     }
-    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(values as? [String])
+    }
     
     /// record's data
     public var data: [String: Any]
