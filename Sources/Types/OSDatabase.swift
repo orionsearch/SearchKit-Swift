@@ -117,7 +117,7 @@ public class OSDatabase {
         }
     }
     
-    var sFunction: ((String, String?) -> [OSRecord])?
+    var sFunction: ((String, String?, Range<Int>?) -> [OSRecord])?
     /// This function acts as a binding between OrionSearch select function and your database one.
     ///
     /// - Parameters:
@@ -127,7 +127,7 @@ public class OSDatabase {
     /// - Returns: It returns an array of `OSRecord`
     public func select(contains: String? = nil, key: String = "keywords", range: Range<Int>? = nil) -> [OSRecord] {
         if let s = sFunction {
-            return s(key, contains)
+            return s(key, contains, range)
         } else {
             return select(key: key, contains: contains)
         }
@@ -213,5 +213,23 @@ public class OSDatabase {
         records.forEach { (record) in
             data.append(record)
         }
+    }
+    
+    
+    
+    
+    
+    /// Set interface between `OSDatabase` and your database.
+    ///
+    /// - Parameters:
+    ///   - select: This function will be called everytime OrionSearch needs to select something. It takes 3 arguments: the column, the expected value / pattern and the optionnal range. If the second or / and third arguments are equal to `nil`, then return every rows.
+    ///   - add: This function will be called to add and preprocess a row. It takes as argument a list of `OSRecord` to be added in your database
+    ///   - keywords: This function will be called to insert keywords in the `keywords` column. It will take 2 arguments: a `Set<String>` of keywords that can be converted to an `Array` and the `OSRecord` that should be modified.
+    public func setPlugin(select: @escaping (String, String?, Range<Int>?) -> [OSRecord],
+                          add: @escaping ([OSRecord]) -> Void,
+                          keywords: @escaping (Set<String>, OSRecord) -> Void) {
+        sFunction = select
+        aFunction = add
+        kFunction = keywords
     }
 }
