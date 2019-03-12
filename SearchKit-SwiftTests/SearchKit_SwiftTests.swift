@@ -105,4 +105,40 @@ class SearchKit_SwiftTests: XCTestCase {
         
         XCTAssert(out.contains("Just for test") && out.contains("Random titles"))
     }
+    func testOSNormal() {
+        let db = OSDatabase()
+        db.data = [
+            OSRecord(data: [
+                "title": "Hello World",
+                "author": "Me"
+                ]),
+            OSRecord(data: [
+                "title": "How are you",
+                "author": "you"
+                ]),
+            OSRecord(data: [
+                "title": "Random titles",
+                "author": "someone"
+                ]),
+            OSRecord(data: [
+                "title": "Just for test",
+                "author": "someone else"
+                ])
+        ]
+        db.configure(main: "title")
+        
+        let os = OrionSearch(db: db, filters: ["author"])
+        
+        let query = OSQuery("World author:me", lang: "en", keys: ["title", "author"])
+        
+        var out = [String]()
+        self.measure {
+            out = [] // empty out, as the code runs multiple time
+            os.perform(query: query, type: .quick) { (record) in
+                out.append(record.data["title"] as! String)
+            }
+        }
+        
+        XCTAssert(out == ["Hello World"])
+    }
 }
