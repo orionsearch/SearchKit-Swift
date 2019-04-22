@@ -113,9 +113,16 @@ class OSNormal {
                 
             })
             
-            let sorted = Array(records).sorted(by: { (b, a) -> Bool in
+            var sorted = Array(records).sorted(by: { (b, a) -> Bool in
                 return a.score - b.score > 0
             })
+            
+            let plugins = options["plugins"] as! [([OSRecord]) -> [OSRecord]]
+            
+            for p in plugins {
+                sorted = p(sorted)
+            }
+            
             sorted.forEach({ (record) in
                 completion(record)
             })

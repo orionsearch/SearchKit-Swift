@@ -74,7 +74,8 @@ public class OrionSearch {
     ///
     public func perform(query: OSQuery, type: OSSearchType = .normal, completion: @escaping (OSRecord) -> Void) {
         let options: [String: Any] = [
-            "filters": Set<String>(filters)
+            "filters": Set<String>(filters),
+            "plugins": self.plugins
         ]
         switch type {
         case .quick:
