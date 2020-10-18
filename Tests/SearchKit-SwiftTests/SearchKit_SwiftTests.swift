@@ -1,23 +1,7 @@
-//
-//  SearchKit_SwiftTests.swift
-//  SearchKit-SwiftTests
-//
-//  Created by Arthur Guiot on 5/3/19.
-//  Copyright © 2019 Arthur Guiot. All rights reserved.
-//
-
 import XCTest
 @testable import SearchKit_Swift
 
-class SearchKit_SwiftTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+final class SearchKit_SwiftTests: XCTestCase {
     func testOSRecord() {
         let record = OSRecord(data: [
             "title": "Hello World",
@@ -117,6 +101,10 @@ class SearchKit_SwiftTests: XCTestCase {
                 "author": "you"
                 ]),
             OSRecord(data: [
+                "title": "Hello World",
+                "author": "you"
+                ]),
+            OSRecord(data: [
                 "title": "Random titles",
                 "author": "someone"
                 ]),
@@ -131,14 +119,27 @@ class SearchKit_SwiftTests: XCTestCase {
         
         let query = OSQuery("World author:me", lang: "en", keys: ["title", "author"])
         
-        var out = [String]()
+        var out = [[String: String]]()
         self.measure {
             out = [] // empty out, as the code runs multiple time
-            os.perform(query: query, type: .quick) { (record) in
-                out.append(record.data["title"] as! String)
+            os.perform(query: query, type: .normal) { (record) in
+                out.append([
+                    "title": record.data["title"] as! String,
+                    "author": record.data["author"] as! String
+                ])
             }
         }
-        
-        XCTAssert(out == ["Hello World"])
+        XCTAssertEqual(out.count, 1)
+        print(out)
+        XCTAssertEqual(out[0]["title"], "Hello World")
+        XCTAssertEqual(out[0]["author"], "Me")
     }
+
+    static var allTests = [
+        ("OS Records", testOSRecord),
+        ("OS Query", testOSQuery),
+        ("OS Database", testOSDatabase),
+        ("OS Quick", testOSQuick),
+        ("OS Normal", testOSNormal)
+    ]
 }

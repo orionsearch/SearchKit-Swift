@@ -19,8 +19,6 @@ class OSQuick {
         self.db = db
         self.options = options
         self.completion = callback
-        
-        search()
     }
     
     func getKeys() -> [String] {

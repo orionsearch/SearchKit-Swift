@@ -79,9 +79,11 @@ public class OrionSearch {
         ]
         switch type {
         case .quick:
-            OSQuick(query: query, db: self.db, options: options, callback: completion)
+            let quick = OSQuick(query: query, db: self.db, options: options, callback: completion)
+            quick.search()
         case .normal:
-            OSNormal(query: query, db: self.db, options: options, callback: completion)
+            let normal = OSNormal(query: query, db: self.db, options: options, callback: completion)
+            normal.search()
         case .advanced:
             break
         }

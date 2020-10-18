@@ -21,7 +21,6 @@ class OSNormal {
         self.completion = callback
         
         cacheFilters()
-        search()
     }
     
     func getKeys() -> [String] {
@@ -73,7 +72,7 @@ class OSNormal {
                 let select = self.db.select(contains: keyword, key: key)
                 
                 select.forEach({ (record) in
-                    var emplacement = record.data[key]
+                    let emplacement = record.data[key]
                     var arr = [String]()
                     
                     if let e = emplacement as? String {
@@ -92,40 +91,39 @@ class OSNormal {
                     
                     var br = false
                     self.filters.forEach({ (filter) in
-                        let reg = Regex(pattern: "\\b\(filter[1])\\b")
-                        
-                        let a = record.data[filter[0]]
-                        if a == nil {
+                        guard let a = record.data[filter[0]] as? String else {
                             br = true
-                        } else if ((a as? String) ?? "").matchRegex(pattern: reg) == false {
+                            return
+                        }
+                        guard a.lowercased().contains(filter[1].lowercased()) else {
                             br = true
+                            return
                         }
                     })
                     
                     if br == false {
-                        if records.contains(record) {
-                            records.remove(record)
+                        if !records.contains(record) {
+                            record.score = nbOfKeys
+                            let (inserted, member) = records.insert(record)
                         }
-                        record.score = nbOfKeys
-                        records.insert(record)
                     }
                 })
                 
             })
-            
-            var sorted = Array(records).sorted(by: { (b, a) -> Bool in
-                return a.score - b.score > 0
-            })
-            
-            let plugins = options["plugins"] as! [([OSRecord]) -> [OSRecord]]
-            
-            for p in plugins {
-                sorted = p(sorted)
-            }
-            
-            sorted.forEach({ (record) in
-                completion(record)
-            })
         }
+        
+        var sorted = Array(records).sorted(by: { (b, a) -> Bool in
+            return a.score - b.score > 0
+        })
+        
+        let plugins = options["plugins"] as! [([OSRecord]) -> [OSRecord]]
+        
+        for p in plugins {
+            sorted = p(sorted)
+        }
+        
+        sorted.forEach({ (record) in
+            completion(record)
+        })
     }
 }

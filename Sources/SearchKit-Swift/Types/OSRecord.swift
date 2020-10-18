@@ -8,6 +8,21 @@
 
 import Foundation
 
+fileprivate extension Array where Element: Hashable {
+    var asBag: [Element: Int] {
+        return reduce(into: [:]) {
+            $0.updateValue(($0[$1] ?? 0) + 1, forKey: $1)
+        }
+    }
+    func containSameElements(_ array: [Element]) -> Bool {
+        let selfAsBag = asBag
+        let arrayAsBag = array.asBag
+        return selfAsBag.count == arrayAsBag.count && selfAsBag.allSatisfy {
+            arrayAsBag[$0.key] == $0.value
+        }
+    }
+}
+
 /// `OSRecord` is an object representing a row in your database. It can be modified to keep certain properties or hide data. It's a pretty light object that helps OrionSearch unifying its ecosystem architecture without using native objects for better integration across all the different platforms.
 ///
 /// The `OSRecord` object will mostly be used as a read-only property given by the `perform` method in `OrionSearch`. But it can also be created manually for in-memory databases:
@@ -30,23 +45,23 @@ public class OSRecord: Equatable, Hashable {
     ///   - rhs: Right record
     /// - Returns: Bool
     public static func == (lhs: OSRecord, rhs: OSRecord) -> Bool {
-        let l = lhs.values as? [String]
-        let r = rhs.values as? [String]
-        return l == r
+        let l = lhs.values
+        let r = rhs.values
+        return l.containSameElements(r)
     }
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(values as? [String])
+        hasher.combine(data)
     }
     
     /// record's data
-    public var data: [String: Any]
+    public var data: [String: AnyHashable]
     /// Record's score. Used for sorting.
     public var score: Double = 0
     
     /// The initializer manages the record's data
     ///
     /// - Parameter data: Takes a dictionnary as input, represent the record's data
-    public init(data: [String: Any]) {
+    public init(data: [String: AnyHashable]) {
         self.data = data
     }
     
@@ -77,7 +92,7 @@ public class OSRecord: Equatable, Hashable {
         return Array<String>(self.data.keys)
     }
     /// Values of the data object
-    public var values: [Any] {
-        return Array<Any>(self.data.values)
+    public var values: [AnyHashable] {
+        return Array<AnyHashable>(self.data.values)
     }
 }
